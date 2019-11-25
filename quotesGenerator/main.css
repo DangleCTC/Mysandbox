@@ -1,0 +1,43 @@
+body{
+    min-height: 100vh;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    background:pink;
+    color: black;
+    font-family: 'calibri', 'sans-serif';
+    font-weight: 400;
+    text-transform: capitalize;
+}
+
+.container{
+    text-align:center;
+    padding: 2rem;
+    border-radius: 5px;
+    background-color: white;
+    flex:0 0 80%;
+}
+
+#quoteBtn{
+    border:none;
+    color:white;
+    background: rgba(0, 0, 0, 0.6);
+    font-size: 1.3rem;
+    padding: 0.25rem 0.5rem;
+    border-radius: 7px;
+    text-transform: capitalize;
+    outline:none;
+    cursor: pointer;
+}
+
+#quoteBtn:hover{
+    background:pink;
+    color:black;
+}
+
+blockquote{
+    background: #f9f9f9;
+    border-left: 10px solid pink;
+    margin:1.5rem;
+    padding:0.5rem;
+}
