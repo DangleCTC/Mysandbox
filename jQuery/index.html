@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>jQuery Crash Course</h1>
+    </header>
+
+    <div id="container">
+        <h1 id="heading1">Heading One</h1>
+        <p id="para1">Excepteur ex est voluptate nulla fugiat nulla voluptate nostrud culpa Lorem esse do. 
+            Mollit proident sint esse qui. Sunt aliqua deserunt est ad mollit sit aliqua do reprehenderit 
+            nostrud dolore ut. Sint ut eiusmod minim sunt voluptate consequat adipisicing excepteur non. 
+            Est velit est magna aliquip duis ex dolor aliqua fugiat nisi. Esse consectetur Lorem anim labore. 
+            In mollit dolor dolore sint ex<span> adipisicing dolore</span> labore Lorem est labore.</p>
+
+        <h1 class="heading2">Heading One</h1>
+        <p class="para2">Excepteur ex est voluptate nulla fugiat nulla voluptate nostrud culpa Lorem esse do. 
+            Mollit proident sint esse qui. Sunt aliqua deserunt est ad mollit sit aliqua do reprehenderit 
+            nostrud dolore ut. Sint ut eiusmod minim sunt voluptate consequat adipisicing excepteur non. 
+            Est velit est magna aliquip duis ex dolor aliqua fugiat nisi. Esse consectetur Lorem anim labore. 
+            In mollit dolor dolore sint ex<span> adipisicing dolore</span> labore Lorem est labore.</p>
+
+
+            <ul id="list">
+                <li>List Item</li>
+                <li>List Item</li>
+                <li>List Item</li>
+                <li>List Item</li>
+                <li>List Item</li>
+                <li>List Item</li>
+                <li>List Item</li>
+                <li>List Item</li>
+            </ul>
+        
+            <input type="button" value="Button 1">
+            <input type="button" value="Button 2">
+            <!-- This is text field no need for value but we can use placeholder -->
+            <input type="text">
+            <a href="https://www.google.com">Google</a>
+            <a href="https://www.spotify.com/us/">Spotify</a>
+
+    </div>
+
+
+    <script>
+        //This will hide all of h1 tags with #heading1 ID or .heading1 CLASS
+        // $('h1#heading1').hide();
+        // $('h1.heading2').hide();
+
+        //This will target spans inside p tags/ wont work outside, remove p to target all spans
+        $('p span').css('color', 'pink')
+
+        //This targets ul tags with list ID, li:first targets the FIRST item on list
+        $('ul#list li:first').css('color', 'pink');
+        //This targets ul tags with list ID, li:first targets the LAST item on list
+        $('ul#list li:last').css('color', 'red');
+        //This targets ul tags with list ID, li:first targets the EVEN items on list
+        $('ul#list li:even').css('background-color', 'gray');
+        //This targets ul tags with list ID, li:first targets the ODD items on list
+        $('ul#list li:odd').css('background-color', 'yellow');
+        //This targets the nth item, in this case 3rd or 3n
+        $('ul#list li:nth-child(3n)').css('list-style','none')
+        //This target all :button TYPES 
+        // $(':button').hide();
+        //:text TYPE
+        // $(':text').hide();
+
+
+        //This is targeting the [href] attributes
+        $('[href]').css('color', 'pink');
+        //Targetting specific a tag href -> spotify
+        $('a[href="https://www.spotify.com/us/"]').css('color', 'green');
+
+        //This will .hide() everything because of *
+        // $('*').hide();
+    </script>
+
+    
+</body>
+</html>
