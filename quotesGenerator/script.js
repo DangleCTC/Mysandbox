@@ -54,7 +54,11 @@ const quotes = [
     {
         name:'Michael Scott',
         quote:'Now, you may look around and see two groups here. White collar, blue collar. But I don’t see it that way. And you know why not? Because I am collar-blind.'
-    },   
+    },
+    {
+        name:'Victoria Hong',
+        quote:'you are defined by the effort you put into the solution, not how fast you get it done or how smart you are.'
+    } 
 ]
 
 const quoteBtn = document.querySelector('#quoteBtn');
