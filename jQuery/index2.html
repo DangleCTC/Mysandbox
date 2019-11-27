@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>jQuery Crash Course</h1>
+    </header>
+
+    <div id="container">
+        <h3>Mouse Events</h3>
+        <button id="btn1">Button 1</button>
+        <button id="btn2">Button 2</button>
+        <button id="btn3">Hide</button>
+        <button id="btn4">Show</button>
+        <button id="btn5">Toggle</button>
+        <button id="btn6">Double Click</button>
+        <button id="btn7">Hover</button>
+        <button id="btn8">Move</button>
+        <button id="btn9">Mouse Up/Down</button>
+        <button id="btn10">Console Info</button>
+        
+        <p class="para1">Sint consectetur amet aliqua laboris laboris reprehenderit culpa dolor aute cupidatat id veniam. Dolore quis consequat id sunt laboris velit laboris esse. Commodo esse culpa duis nostrud veniam reprehenderit duis id. Non adipisicing ex amet nulla proident aliquip ipsum nulla.</p>
+        <h1 id="coords"></h1>
+        <hr>
+        <form>
+            <label>Name</label><br>
+            <input type="text" id="name" name="name">
+            <br>
+            <label>Email</label><br>
+            <input type="email" id="email" name="email">
+            <br>
+            <label>Gender</label><br>
+            <select id="gender" name="gender">
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="thatsit">That's it.</option>
+            </select>
+            <br>
+            <input type="submit" value="submit">
+        </form>
+    </div>
+
+<!-- Sometimes people like to put js script in head, but before end of body is better.
+If you put script in head and reload the page, when you click the button nothing 
+happens. This is bc its trying to grab button 1 before it reloads on the page. 
+A solution is document.ready this will say "run the function when the document is
+ready." -->
+    <script>
+        //This is shorthand actual event (prefer this)
+        $(document).ready(function(){
+            $('#btn1').click(function(){
+                alert('Button Clicked! :D');
+             })
+        });
+        
+        //This is the same way of doing the above using the on method
+        $(document).ready(function(){
+            $('#btn2').on('click', function(){
+                alert('Button Clicked! :D');
+             });
+        });
+
+        //This function targets the #btn3 and when btn3 is clicked it .hide(); the .para1 class
+        $(document).ready(function(){
+            $('#btn3').on('click', function(){
+                $('.para1').hide();
+            });
+        });
+
+        //This function targets the #btn4 and when btn4 is clicked it .show(); the .para1 class
+        $(document).ready(function(){
+            $('#btn4').on('click', function(){
+                $('.para1').show();
+            });
+        });
+
+        //This function targets the #btn5 and when btn5 is clicked it .toggle(); the .para1 class
+        $(document).ready(function(){
+            $('#btn5').on('click', function(){
+                $('.para1').toggle();
+            });
+        });
+
+        //This function targets the #btn6 and when btn6 is DOUBLE clicked it .toggle(); the .para1 class
+        $(document).ready(function(){
+            $('#btn6').on('dblclick', function(){
+                $('.para1').toggle();
+            });
+        });
+
+        //This function targets the #btn7 and when btn7 is HOVERD it .toggle(); the .para1 class
+        //HOVER is not an actual event it combines mouseenter and mouseleave into one.
+        $(document).ready(function(){
+            $('#btn7').hover(function(){
+                $('.para1').toggle();
+            });
+        });
+
+        //This function targets the #btn8 and when btn8 is hoved and moved it .toggle(); the .para1 class
+        $(document).ready(function(){
+            $('#btn8').on('mousemove', function(){
+                $('.para1').toggle();
+            });
+        });
+
+        //This function targets the #btn9 and when btn9 is clicked DOWN or UP it .toggle(); the .para1 class
+        $(document).ready(function(){
+            $('#btn9').on('mousedown', function(){
+                $('.para1').toggle();
+            });
+
+            $('#btn9').on('mouseup', function(){
+                $('.para1').toggle();
+            });
+        });
+
+        //This function targets the #btn10 and when btn10 is clicked it shows information about the event
+        //In console or alert
+        $(document).ready(function(){
+            $('#btn10').click(function(e){
+                console.log(e);
+                alert(e.currentTarget.id);
+                //This could be done for innerHTML, className and other info instead of .id
+            });
+        });
+
+        //This targets the whole document to show the coordinates on the page with html with mousemove
+        //This is good for very interactive applications that use a lot of animation
+        $(document).ready(function(){
+            $(document).mousemove(function(e){
+                $('#coords').html('Coordinates: Y '+e.clientY+" X: "+e.clientX);
+            });
+        });
+    </script>
+
+    
+</body>
+</html>
