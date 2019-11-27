@@ -10,11 +10,11 @@
 </head>
 <body>
     <header>
-        <h1>jQuery Crash Course</h1>
+        <h1>jQuery Crash Course | Mouse Events</h1>
     </header>
 
     <div id="container">
-        <h3>Mouse Events</h3>
+        <h3>Mouse Events </h3>
         <button id="btn1">Button 1</button>
         <button id="btn2">Button 2</button>
         <button id="btn3">Hide</button>
@@ -29,7 +29,7 @@
         <p class="para1">Sint consectetur amet aliqua laboris laboris reprehenderit culpa dolor aute cupidatat id veniam. Dolore quis consequat id sunt laboris velit laboris esse. Commodo esse culpa duis nostrud veniam reprehenderit duis id. Non adipisicing ex amet nulla proident aliquip ipsum nulla.</p>
         <h1 id="coords"></h1>
         <hr>
-        <form>
+        <form id="form">
             <label>Name</label><br>
             <input type="text" id="name" name="name">
             <br>
@@ -137,6 +137,41 @@ ready." -->
             $(document).mousemove(function(e){
                 $('#coords').html('Coordinates: Y '+e.clientY+" X: "+e.clientX);
             });
+        });
+
+        //FOCUS EVENTS - this is when you are clicking into an input, its setting off focus
+        //Alert pops up when you click in text box
+        //This keyword will make whatever input box that you click to take effect
+        $(document).ready(function(){
+            $('input').focus(function(){
+                // alert('Focus');
+                $(this).css('background', 'pink')
+            });
+
+            //BLUR is the opposite of focus! This will make changes to the text box once you click out of it
+            $('input').blur(function(){
+                $(this).css('background', 'white')
+            });
+
+            //This will console.log() values entered in the input fields
+            $('input').keyup(function(e){
+                console.log(e.target.value);
+            });
+
+            //Alert when user change male/female selection
+            $('select#gender').change(function(e){
+                alert('Gender Changed');
+                //or
+                // alert(e.target.value);
+            });
+
+            //this will console.log out the submited name and email
+            $('#form').submit(function(e){
+                e.preventDefault();
+                var name = $('input#name').val();
+                var email = $('input#email').val();
+                console.log(name, email);
+            })
         });
     </script>
 

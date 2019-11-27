@@ -14,6 +14,10 @@ header{
     margin-bottom:10px;
 }
 
+input{
+    outline:none;
+}
+
 #container{
     width:90%;
     margin: auto;
