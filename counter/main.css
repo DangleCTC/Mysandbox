@@ -1,0 +1,45 @@
+body{
+    min-height: 100vh;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    background: url('img/treesbg.jpg')center/cover no-repeat;
+    /* background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat; */
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    text-transform: capitalize;
+    overflow: hidden;
+}
+
+.counter-box{
+    text-align: center;
+    padding: 3rem;
+    font-weight: bold;
+    box-shadow: 15px 20px 15px 5px rgba(0, 0, 0,50), -15px -20px 15px 5px rgba(0, 0, 0,50);
+}
+
+
+.counter{
+    font-size:6rem;
+}
+
+.btn{
+    background:rgb(219, 122, 2);
+    border-radius: .3rem;
+    font-size:3rem;
+    padding:.5rem 45px .5rem 45px;
+    border-color:rgb(219, 122, 2);
+    outline: none;
+    box-shadow:5px 5px 20px 5px rgba(0, 0, 0,50); 
+    color:white;
+    margin:.5rem;
+}
+
+.btn:hover{
+    background:darkorange;
+}
+.btn:active{
+    box-shadow: none;
+}
