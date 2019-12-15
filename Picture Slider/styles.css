@@ -1,0 +1,87 @@
+body{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url('img/bg.jpg')center/cover no-repeat;
+    overflow: hidden;
+}
+
+.images{
+    background: pink;
+    flex:0 0 80%;
+    min-height: 60vh;
+    background: url('img/bcg-0.jpg')center/cover no-repeat;
+    border-radius: 15px;
+    box-shadow: 0px 0px 45px 45px black;
+    position: relative;
+}
+
+.btn{
+    display: inline-block;
+    background:rgb(187, 104, 3);
+    border: transparent;
+    font-size: 1.5rem;
+    padding: 0.5rem;
+    border-radius: 1rem;;
+    box-shadow: 0px 0px 2px 5px black;
+    outline:none;
+    height: 100px;
+}
+
+.prevBtn{
+    position: absolute;
+    top:50%;
+    transform: translate(-50%,-50%);
+}
+
+.nextBtn{
+    position: absolute;
+    top:50%;
+    right:0%;
+    transform: translate(50%,-50%);
+}
+
+.btn:active{
+    /* box-shadow: 0px 0px 20px 30px rgb(255, 153, 28);
+    background: rgb(255, 153, 28); */
+}
+
+.btn:hover{
+
+}
+
+
+
+
+
+
+
+
+/* ------------------------------------------------------------------------------
+                                    NOTES
+-------------------------------------------------------------------------------*/
+/*
+    display: flex; 
+    Flex box where items will be stacked next to each other horizontally
+
+    align-items:center;
+    Align items center vertically
+                            Doing these two the item(s) will sit in middle of page
+    justify-content: center;
+    Align items center horizonall
+
+    margin:0;
+    padding:0;
+    Removes default padding and margin in <body> and <html>
+
+    overflow:hidden
+    Hides scroll bars and overflowing elements
+
+    flex: 0 0 80%;
+    Flex: flow-grow | flex-shrink | flex-basis
+
+    position:relative;
+    Setting it to an element or object to move it without compromising space around it
+
+*/
