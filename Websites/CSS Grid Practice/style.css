@@ -1,0 +1,104 @@
+*{
+    font-size: 20px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 650;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+.grid{
+    display:grid;
+    grid-template-columns: 70% 30%;
+    grid-column-gap: 1em;
+    grid-row-gap: 1em; 
+    /* OR grid-gap:1em; */
+}
+
+.grid > div{
+    padding:1em;
+    background: rgb(255, 154, 30)
+}
+/* 
+.grid > div:nth-child(odd){
+    background: linear-gradient(360deg, #03a9f4, #f441a5, #ffeb3b, #03a9f4);
+} */
+
+.grid2{
+    margin-top: 15px;
+    display:grid;
+    grid-template-columns: 30% 30% 40%;
+    grid-gap:.1em;
+}
+
+.grid2 >div{
+    border-radius: .25rem;
+    border: black solid 1px;
+    padding:1em;
+    background: #03a9f4;
+}
+
+.nested{
+    display: grid;
+    text-align: center;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 5px;
+    border:1px solid black;
+    box-shadow: 1px 1px 1px 1px black;
+}
+
+.nested>div{
+    border: #333 1px solid;
+    border:1px solid black;
+    box-shadow: 1px 1px 1px 1px black;
+}
+
+
+
+/* Recommended to stick to fractions over padding, run into problems with nested padding + marg */
+.grid3{
+    margin-top: 10px;
+    display:grid;
+    /* grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr; */
+    grid-template-columns: repeat(12, 1fr);
+    grid-gap:.1em;
+    text-align: center;
+    vertical-align: middle;
+    /* This or adjust padding of divs */
+    grid-auto-rows: minmax(100px, auto);
+}
+
+
+
+.grid3 >div:before{
+    
+}
+
+
+
+.grid3 >div{
+    border-radius: .25rem;
+    border: black solid 1px;
+    padding:2em 0.1em 2em 0.1em;
+    background: #03a9f4;
+    margin-bottom: auto;
+    transition: 1s;
+    background: linear-gradient(-25deg, #03a9f4, #f441a5, #ffeb3b, #03a9f4);
+}
+
+.grid3 >div:hover{
+    background: black;
+    color:white;
+    border-radius: .25rem;
+    animation: blur .3s linear;
+    transition:1s;
+}
+
+@keyframes blur{
+    0%{
+        filter:blur(2px) ;
+    }
+    100%{
+        filter:blur(0px) ;
+    }
+}
+
+

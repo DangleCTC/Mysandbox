@@ -1,0 +1,64 @@
+html{
+    background: #ff785a;
+}
+
+.spiderweb{
+    background: #fff;
+    width:2px;
+    height:200px;
+    margin-left: 49px;
+}
+
+.spider{
+    position: absolute;
+    display: inline-block;
+    top:0;
+    left:30%;
+    animation: swing 2s infinite;
+    transform-origin:top;
+}
+
+.spider .body{
+    width:100px;
+    height:80px;
+    background: #000;
+    position: relative;
+    border-radius:50%;
+}
+
+.spider .body .eye{
+    width: 33px;
+    height: 33px;
+    background: #fff;
+    position: absolute;
+    bottom:20px;
+    border-radius: 50%;
+}
+
+.spider .eye.right{
+    right:15px;
+}
+
+.spider .eye.left{
+    left:15px;
+}
+
+.spider .eye:after{
+    background: #000;
+    width: 7px;
+    height:7px;
+    content:'';  
+    /* what does this do^ */
+    display: block;
+    margin:55%;
+    border-radius: 50%;
+    animation: look 8s infinite;
+}
+
+
+.spider .legs{
+    position:absolute;
+    bottom:-10%;
+    z-index: -1;
+}
+
